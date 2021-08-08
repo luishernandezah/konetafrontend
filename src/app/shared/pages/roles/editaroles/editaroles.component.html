@@ -1,0 +1,22 @@
+<div class="container my-4">
+    <form #termina [formGroup]="formu" class="example-form">
+        <h3 class="font-weight-bold ">Permiso</h3>
+
+
+
+        <ul class="list-group list-group-flush">
+
+            <li class="list-group-item" *ngFor="let items of permisos">
+                <div class="form-check custom-control custom-checkbox">
+                    <input [checked]="formu.get('rolepermiso')?.value|checkbox:items.id" (change)="onCheckboxChange($event)" formArrayName="rolepermiso" class="form-check-input" type="checkbox" [value]="items.id">
+                    <label class="form-check-label labercss">{{items.nombre}}-<p  class="mb-0">Descripción: <small class="text-muted"> {{items.descripcion}}</small></p>---- {{items.menu}} </label>
+                </div>
+            </li>
+        </ul>
+
+
+        <div class="col text-center btm">
+            <button type="button" (click)="enviar()" class="btn btn-primary">Guardar Permisos</button>
+        </div>
+    </form>
+</div>

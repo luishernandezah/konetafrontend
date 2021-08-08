@@ -1,0 +1,27 @@
+<div class="container login contenedor col-md-12 text-center">
+
+    <form [formGroup]="formu">
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Correo Electonico</mat-label>
+                <input formControlName="email" name="email" class="email" matInput placeholder="pat@example.com" required>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-error *ngIf="getErrorEmail">{{getErrorEmail()}}</mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input formControlName="password" name="password" matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+                <mat-error *ngIf="getErrorpassword">{{getErrorpassword()}}</mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <button [disabled]="disable" type="button" (click)="login()" class="btn btn-primary">Entra</button>
+        </p>
+    </form>
+
+</div>

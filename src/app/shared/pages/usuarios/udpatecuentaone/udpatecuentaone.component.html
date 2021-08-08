@@ -1,0 +1,60 @@
+<div class="cambia">
+    <form [formGroup]="formu" lass="formula needs-validation imgcar imgn">
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="inptNombre">NOMBRE</label>
+                <input formControlName="name" name="name" type="text" class="form-control" id="inptNombre" placeholder="#########" required>
+                <small *ngIf="getError('name')">{{ getError('name')}}</small>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="inputemail">EMAIL</label>
+                <input formControlName="email" name="email" type="email" class="form-control" id="inputemail" placeholder="huila" required>
+
+                <small *ngIf="getError('email')">{{ getError('email')}}</small>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="inputpassword">contraseña</label>
+                <input formControlName="password" name="password" type="password" class="form-control" id="inputpassword" required>
+                <small *ngIf="getError('password')">{{ getError('password')}}</small>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="inputpasswordconfig">contraseña</label>
+                <input formControlName="passwordconfig" name="passwordconfig" type="password" class="form-control" id="inputpasswordconfig" required>
+                <small *ngIf="getError('passwordconfig')">{{ getError('passwordconfig')}}</small>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="inputdocumento">DOCUMENTO</label>
+                <input formControlName="documento" name="documento" type="number" class="form-control" id="inputdocumento" placeholder="00000" required>
+                <small *ngIf="getErrornumero('password')">{{ getErrornumero('password')}}</small>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="inputdireccion">DIRECCION</label>
+                <input formControlName="direccion" name="direccion" type="text" class="form-control" id="inputdireccion" placeholder="medellin" required>
+                <small *ngIf="getError('direccion')">{{ getError('direccion')}}</small>
+
+            </div>
+            <div *ngIf="false" class="form-group col-md-6">
+                <div class="col-md-12">
+                    <select formControlName="role" name="role" required>
+                  <option *ngFor="let item of roles" [value]="item.id" [selected]="item.id == 1 ">{{item.nombre}}</option>
+               </select>
+                    <small *ngIf="getError('role')">{{ getError('role')}}</small>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row w-100 align-items-center">
+            <div class="col text-center">
+                <button class="btn btn-primary center-block" (click)="guardar()" type="submit">GUARDAR</button>
+            </div>
+        </div>
+    </form>
+</div>

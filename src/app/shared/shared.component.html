@@ -1,0 +1,42 @@
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">KONETA</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+
+                <li class="nav-item" *ngIf="usaurios">
+                    <a routerLink="listausuarios" routerLinkActive="router-link-active" class="nav-link" href="#">USUARIOS</a>
+                </li>
+                <li class="nav-item" *ngIf="cliente">
+                    <a routerLink="listaclients" routerLinkActive="router-link-active" class="nav-link" href="#">CLIENTES</a>
+                </li>
+                <li class="nav-item active" *ngIf="role">
+                    <a routerLink="listaroles" routerLinkActive="router-link-active" class="nav-link" href="#">Roles  y Permiso</a>
+                </li>
+
+                <li class="nav-item active" *ngIf="role">
+                    <a [routerLink]="['actualizamicuenta/',id]" routerLinkActive="router-link-active" class="nav-link" href="#">MI CUENTA</a>
+                </li>
+
+                <li class="nav-item classes">
+                    <a class="nav-link" type="submit" (click)="loguat()">CERRAR</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container">
+        <router-outlet></router-outlet>
+    </main>
+    <footer class="fixed_footer">
+        <div class="content">
+            <div id="pagina">
+
+                <div id="contenido"></div>
+                <div id="pie">2021 &copy; KONETA</div>
+            </div>
+        </div>
+    </footer>
+</div>

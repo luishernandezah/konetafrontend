@@ -1,0 +1,46 @@
+<div class="listausuarios">
+
+
+    <div class="container-fluid justify-content-center table-responsive ">
+        <input name="inputseach" [(ngModel)]="inputseach" type="text" class=" control form-control-plaintext" id="staticEmail" placeholder="BUSCAR">
+
+        <button *ngIf="guarda" (click)="formularios.activo('Guardar')" type=" button " class="bttn btn btn-success float-right ">Add</button>
+
+        <table class=" table table-striped table-hover ">
+
+            <thead>
+                <tr>
+                    <th scope="row ">#</th>
+                    <th scope="col ">name</th>
+                    <th scope="col ">email</th>
+                    <th scope="col ">documento</th>
+                    <th scope="col ">direccion</th>
+                    <th scope="col "></th>
+                    <th scope="col "></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of datos |busca:inputseach;  index as i">
+                    <th scope="row ">{{ i+1 }}</th>
+                    <td>{{ item.name }} </td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.documento }}</td>
+                    <td>{{ item.direccion }}</td>
+                    <td>
+                        <a type="button" *ngIf="actualiza" (click)="actualizai(item.user_id)" class="btn btn-primary button justify-content-center">
+                        EDITA
+                      </a>
+                    </td>
+                    <td>
+                        <a *ngIf="eliminard" type="button" (click)="eliminar(item.user_id)" class="btn btn-danger button justify-content-center">
+                      ELIMINAR
+                    </a>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<app-formausers [texto]="texto" [formu]="formu" (enviardata)="guardar($event)"></app-formausers>

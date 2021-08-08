@@ -1,0 +1,32 @@
+.mat-form-field-bo {
+    margin-left: 20px;
+    background: #ffffff;
+}
+
+.example-viewport {
+    height: 500px;
+    width: 100%;
+    border: 1px solid black;
+    background: white;
+}
+
+.example-dt {
+    height: 30px;
+    font-weight: bold;
+}
+
+.example-dd {
+    height: 30px;
+}
+
+.btm {
+    margin: 20px 0px 10px 0px;
+}
+
+@media only screen and (max-width: 290px) {
+    label {
+        width: 169px;
+        overflow-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+}

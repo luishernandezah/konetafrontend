@@ -1,0 +1,66 @@
+button {
+    background: none;
+    border: 0;
+    color: inherit;
+    /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-user-select: none;
+    /* for button */
+    -webkit-appearance: button;
+    /* for input */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    margin: auto;
+}
+
+.classes {
+    display: flex;
+}
+
+.usuarios {
+    margin: auto;
+    width: auto;
+    height: auto;
+}
+
+.fixed_footer {
+    width: 100%;
+    height: 50px;
+    background: rgb(233, 230, 230);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: -100;
+}
+
+.fixed_footer p {
+    color: #ccc9c9;
+    column-count: 2;
+    column-gap: 50px;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+#pagina {
+    position: relative;
+    min-height: 100%;
+}
+
+#contenido {
+    padding-bottom: 50px;
+    /* este valor debe ser igual o mayor al alto del pie */
+}
+
+#pie {
+    height: 50px;
+    line-height: 50px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
